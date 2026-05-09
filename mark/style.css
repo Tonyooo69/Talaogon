@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(muzan.gif);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    position: fixed;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #2222228b;
+    color: white;
+    transition: 0.3s ease;
+    z-index: 1000;
+    padding-top: 60px;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.nav-links a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background: #333;
+    border-left: 4px solid #0066ff;
+}
+
+.nav-links a.active {
+    background: #ff9d00;
+    border-left: 4px solid #0066ff;
+}
+
+.hamburger {
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    color: white;
+}
+
+.main {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.form-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: min(800px, 95%);
+}
+
+.grid-form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+@media (max-width: 768px) {
+    .grid-form {
+        grid-template-columns: 1fr;
+    }
+}
+
+.form-group {
+     display: flex; 
+     flex-direction: column; 
+     gap: 5px; 
+     margin-bottom: 10px; 
+}
+
+input { 
+     padding: 10px; 
+     border: 1px solid #000; 
+     border-radius: 5px; 
+}
+
+button { 
+    grid-column: 1 / -1; 
+    padding: 13px; 
+    background: #ff9d00; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+}
+
+label {
+    color: white;
+}
